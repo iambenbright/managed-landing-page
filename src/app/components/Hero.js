@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Image from '../shared/Image';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -29,50 +28,42 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
   },
+  heroBgPattern: {
+    backgroundImage: `url(${require('../../assets/images/bg-tablet-pattern.svg')})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'top -50px right -130px',
+  },
 }));
 
 const Hero = () => {
   const classes = useStyles();
 
   return (
-    <Box width="100%">
-      <Box position="relative" width="100%">
-        <Image
-          source="bg-tablet-pattern.svg"
-          style={{
-            position: 'absolute',
-            top: '-30px',
-            right: '-60px',
-            width: '100%',
-            height: 'auto',
-          }}
-        />
+    <Box>
+      <Box width="100%" height="450px" className={classes.heroBgPattern} />
+      <Box width="100%" position="absolute" top={120}>
+        <Box position="relative">
+          <img
+            src={require('../../assets/images/illustration-intro.svg')}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+            }}
+            alt="illustration"
+          />
+        </Box>
       </Box>
-      <Box width="90%" position="relative">
-        <Image
-          source="illustration-intro.svg"
-          style={{
-            position: 'absolute',
-            top: 120,
-            left: 28,
-            width: '100%',
-            height: 'auto',
-          }}
-        />
-      </Box>
-      <Box height={420} />
-      <Box position="relative" width="100%" height="380px" overflow="hidden">
-        <Image
-          source="bg-tablet-pattern.svg"
-          style={{
-            position: 'absolute',
-            top: 15,
-            right: '-240px',
-            width: '100%',
-            height: 'auto',
-          }}
-        />
-        <Box position="relative" width="80%" mx="auto" textAlign="center">
+      <Box
+        width="100%"
+        height="400px"
+        mt="30px"
+        className={classes.heroBgPattern}
+        style={{ backgroundPosition: 'top 0 right -260px' }}
+      >
+        <Box width="80%" mx="auto" textAlign="center">
           <Typography variant="h4" className={classes.heroHeadText}>
             Bring everyone <br /> together to build <br /> better products.
           </Typography>

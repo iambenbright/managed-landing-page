@@ -5,8 +5,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Box from '@material-ui/core/Box';
 
-import Image from '../shared/Image';
-
 const useStyles = makeStyles(theme => ({
   toolbar: {
     minHeight: theme.mixins.toolbar.minHeight * 2,
@@ -21,11 +19,9 @@ const Navigation = () => {
     <AppBar elevation={0} color="transparent">
       <Toolbar className={classes.toolbar}>
         <Box mt="14px">
-          <Image source="logo.svg" />
+          <img src={require('../../assets/images/logo.svg')} alt="" />
         </Box>
-        <Box>
-          <Image source="icon-hamburger.svg" />
-        </Box>
+        <img src={require('../../assets/images/icon-hamburger.svg')} alt="" />
       </Toolbar>
     </AppBar>
   );
