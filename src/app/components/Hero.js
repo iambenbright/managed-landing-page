@@ -18,10 +18,7 @@ const useStyles = makeStyles(theme => ({
     textTransform: 'capitalize',
     marginTop: theme.spacing(4),
     boxShadow: theme.shadows[2],
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
-    paddingLeft: theme.spacing(4),
-    paddingRight: theme.spacing(4),
+    padding: `${theme.spacing(1)} ${theme.spacing(4)}`,
     borderRadius: 20,
   },
   heroContent: {
