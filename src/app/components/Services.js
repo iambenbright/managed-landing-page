@@ -36,7 +36,6 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: 'white',
     borderTopRightRadius: '20px',
     borderBottomRightRadius: '20px',
-    paddingRight: '2px',
   },
   serviceNumberContainer: {
     width: '60px',
