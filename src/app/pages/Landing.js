@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
-import Comments from '../components/Comments';
+import Testimonials from '../components/Testimonials';
+import Footer from '../components/Footer';
 
 const Landing = () => {
   return (
-    <>
+    <Fragment>
       <Navigation />
       <Hero />
       <Services />
-      <Comments />
-    </>
+      <Testimonials />
+      <Footer />
+    </Fragment>
   );
 };
 
