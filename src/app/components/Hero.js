@@ -2,9 +2,10 @@ import React from 'react';
 
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import grey from '@material-ui/core/colors/grey';
 import { makeStyles } from '@material-ui/core/styles';
+
+import Button from '../shared/Button';
 
 const useStyles = makeStyles(theme => ({
   heroHeadText: {
@@ -13,13 +14,6 @@ const useStyles = makeStyles(theme => ({
   heroBodyText: {
     color: grey['500'],
     marginTop: theme.spacing(1),
-  },
-  heroCallToAction: {
-    textTransform: 'capitalize',
-    marginTop: theme.spacing(4),
-    boxShadow: theme.shadows[2],
-    padding: `${theme.spacing(1)} ${theme.spacing(4)}`,
-    borderRadius: 20,
   },
   heroContent: {
     paddingLeft: theme.spacing(2),
@@ -68,14 +62,7 @@ const Hero = () => {
             Manage makes if simple for software teams to plan day-to-day tasks
             while keeping the larger team goals in view
           </Typography>
-          <Button
-            disableElevation
-            disableRipple
-            variant="contained"
-            className={classes.heroCallToAction}
-          >
-            Get Started
-          </Button>
+          <Button>Get Started</Button>
         </Box>
       </Box>
     </Box>
