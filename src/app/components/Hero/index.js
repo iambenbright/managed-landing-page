@@ -7,7 +7,6 @@ import Button from "../../shared/Button";
 import { useStyles } from "./styles";
 
 // custom-components
-// import { useMedia } from "../../../utils/useMedia";
 import { NestedContainer } from "../../shared/NestedContainer";
 
 const Hero = () => {
