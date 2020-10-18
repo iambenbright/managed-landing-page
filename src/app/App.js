@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Landing from './pages/Landing';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import deepOrange from '@material-ui/core/colors/deepOrange';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Landing from "./pages/Landing";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import deepOrange from "@material-ui/core/colors/deepOrange";
 
 const defaultTheme = createMuiTheme();
 
@@ -11,7 +11,16 @@ const theme = createMuiTheme({
   ...defaultTheme,
   palette: {
     primary: {
-      main: deepOrange['500'],
+      main: deepOrange["500"],
+    },
+  },
+  overrides: {
+    MuiContainer: {
+      root: {
+        [defaultTheme.breakpoints.up("md")]: {
+          padding: 0,
+        },
+      },
     },
   },
 });
