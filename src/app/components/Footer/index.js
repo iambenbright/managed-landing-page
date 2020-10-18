@@ -1,48 +1,20 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
-import Box from '@material-ui/core/Box';
-import Button from '../shared/Button';
-import Container from '@material-ui/core/Container';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Input from '@material-ui/core/Input';
-import blueGrey from '@material-ui/core/colors/blueGrey';
-import IconButton from '@material-ui/core/IconButton';
+// materialui-components
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
+import { useTheme } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import Input from "@material-ui/core/Input";
+import blueGrey from "@material-ui/core/colors/blueGrey";
 
-const useStyles = makeStyles(theme => ({
-  footerTopContainer: {
-    marginTop: '50px',
-    textAlign: 'center',
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.common.white,
-    padding: '100px 10px',
-  },
-}));
+// custome-components
+import Button from "../../shared/Button";
+import { SocialIcon } from "./Icon";
+import { Link } from "./Link";
 
-const Link = ({ to, label, ...props }) => (
-  <a
-    href={`#${to}`}
-    style={{
-      display: 'block',
-      margin: '20px 0',
-      color: 'white',
-      textDecoration: 'none',
-    }}
-    {...props}
-  >
-    {label}
-  </a>
-);
-
-const SocialIcon = ({ icon }) => {
-  const source = require(`../../assets/images/${icon}.svg`);
-
-  return (
-    <IconButton size="medium">
-      <img src={`${source}`} alt={icon} style={{ width: 30, height: 30 }} />
-    </IconButton>
-  );
-};
+// styles
+import { useStyles } from "./styles";
 
 const Footer = () => {
   const theme = useTheme();
@@ -52,7 +24,7 @@ const Footer = () => {
     <Fragment>
       <Box className={classes.footerTopContainer}>
         <Container maxWidth="lg">
-          <Typography variant="h3" style={{ fontWeight: 'bold' }}>
+          <Typography variant="h3" style={{ fontWeight: "bold" }}>
             Simplify how your teams works today.
           </Typography>
           <Button
@@ -65,14 +37,14 @@ const Footer = () => {
           </Button>
         </Container>
       </Box>
-      <Box bgcolor={blueGrey['900']} pt="20px">
+      <Box bgcolor={blueGrey["900"]} pt="20px">
         <Container maxWidth="lg">
           <Box display="flex" alignItems="center">
             <Button
               style={{
                 backgroundColor: theme.palette.common.white,
                 color: theme.palette.primary.main,
-                marginRight: '10px',
+                marginRight: "10px",
                 paddingTop: theme.spacing(0.6),
                 paddingBottom: theme.spacing(0.6),
               }}
