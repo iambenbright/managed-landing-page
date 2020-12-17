@@ -17,8 +17,6 @@ import { NestedContainer } from '../../shared/NestedContainer';
 // styles
 import { useStyles } from './styles';
 
-const smallScreen = 600;
-
 const Footer = () => {
   const theme = useTheme();
   const classes = useStyles();

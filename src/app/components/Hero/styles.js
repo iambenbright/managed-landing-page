@@ -53,6 +53,7 @@ export const useStyles = makeStyles(theme => ({
   },
   subTitle: {
     marginTop: theme.spacing(1) * 4,
+    color: theme.palette.grey[600],
   },
   illustration: {
     width: '100%',

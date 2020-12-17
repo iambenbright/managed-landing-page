@@ -3,6 +3,7 @@ import deepOrange from '@material-ui/core/colors/deepOrange';
 
 export const useStyles = makeStyles(theme => ({
   root: {
+    position: 'relative',
     display: 'flex',
     flexDirection: 'column',
     [theme.breakpoints.down('sm')]: {
@@ -13,17 +14,18 @@ export const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
-      backgroundImage: `url(${require('../../assets/images/bg-tablet-pattern.svg')})`,
-      backgroundSize: 650,
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'bottom 250% left -100%',
     },
-    [theme.breakpoints.up('lg')]: {
-      backgroundPosition: 'bottom 200% left -70%',
+  },
+  serviceBgImage: {
+    width: '100%',
+    height: 'auto',
+    [theme.breakpoints.up('md')]: {
+      width: 600,
     },
   },
   aboutUs: {
     marginTop: 20,
+    color: theme.palette.grey[600],
     [theme.breakpoints.only('sm')]: {
       width: 400,
       marginLeft: 'auto',
@@ -60,6 +62,7 @@ export const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
   },
   serviceContent: {
+    color: theme.palette.grey[600],
     marginTop: 10,
     paddingRight: 16,
     [theme.breakpoints.up('md')]: {
