@@ -15,24 +15,34 @@ import { SlideDot } from "./SlideDot";
 import { useStyles } from "./styles";
 
 const Testimonials = () => {
+  const classes = useStyles();
   const [activeIndex, setActiveIndex] = useState(0);
   const currentComment = data[activeIndex];
-  const classes = useStyles();
+  const viewport = React.useRef();
 
-  useEffect(() => {
-    const timerId = setInterval(() => {
-      setActiveIndex((prevIndex) => {
-        if (prevIndex === data.length - 1) {
-          return 0;
-        } else {
-          return prevIndex + 1;
-        }
-      });
-    }, 5000);
-    return () => {
-      clearInterval(timerId);
-    };
-  }, [activeIndex]);
+  // useEffect(() => {
+  //   const timerId = setInterval(() => {
+  //     setActiveIndex((prevIndex) => {
+  //       if (prevIndex === data.length - 1) {
+  //         return 0;
+  //       } else {
+  //         return prevIndex + 1;
+  //       }
+  //     });
+  //   }, 5000);
+  //   return () => {
+  //     clearInterval(timerId);
+  //   };
+  // }, [activeIndex]);
+
+  React.useEffect(() => {
+    // const timerId = setInterval(() => {
+    //   viewport.current.style.transform = "translateX(-200px)";
+    // }, 5000);
+    // return () => {
+    //   clearInterval(timerId);
+    // };
+  });
 
   return (
     <Box mt="50px">
@@ -43,22 +53,28 @@ const Testimonials = () => {
         >
           What they've said
         </Typography>
-        <Box className={classes.testimonialContainer}>
-          <Avatar
-            src={currentComment.avatar}
-            variant="circle"
-            alt={currentComment.name}
-            className={classes.MuiAvatarRoot}
-          />
-          <Typography style={{ fontWeight: 700, marginBottom: "20px" }}>
-            {currentComment.name}
-          </Typography>
-          <Typography>{currentComment.comment}</Typography>
+        <Box className={classes.viewportStatic}>
+          <Box className={classes.viewportScroll} ref={viewport}>
+            {data.map(({ id, name, comment, avatar }) => (
+              <Box key={id} className={classes.testimonial}>
+                <Avatar
+                  src={avatar}
+                  variant="circle"
+                  alt={name}
+                  className={classes.avatar}
+                />
+                <Typography style={{ fontWeight: 700, marginBottom: "20px" }}>
+                  {name}
+                </Typography>
+                <Typography>{comment}</Typography>
+              </Box>
+            ))}
+          </Box>
         </Box>
         <Box display="flex" justifyContent="center" m="20px">
           {data.map((item, index) => (
             <SlideDot
-              key={index}
+              key={item.id}
               item={item}
               activeIndex={activeIndex}
               index={index}

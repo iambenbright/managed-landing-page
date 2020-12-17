@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 // materialui-components
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
-import Button from "../../shared/Button";
-import { useStyles } from "./styles";
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import Button from '../../shared/Button';
+import { useStyles } from './styles';
 
 // custom-components
-import { NestedContainer } from "../../shared/NestedContainer";
+import { NestedContainer } from '../../shared/NestedContainer';
 
 const Hero = () => {
   const classes = useStyles();
@@ -15,9 +15,9 @@ const Hero = () => {
   return (
     <Box className={classes.root}>
       <NestedContainer className={classes.heroContent}>
-        <Box order={{ md: "1" }}>
+        <Box order={{ md: '1' }}>
           <img
-            src={require("../../../assets/images/illustration-intro.svg")}
+            src={require('../../assets/images/illustration-intro.svg')}
             className={classes.illustration}
             alt="illustration"
           />

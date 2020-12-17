@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
 // materialui-components
-import AppBar from "@material-ui/core/AppBar";
-import BrandLogo from "../../shared/BrandLogo";
-import Button from "../../shared/Button";
-import Hidden from "@material-ui/core/Hidden";
+import AppBar from '@material-ui/core/AppBar';
+import BrandLogo from '../../shared/BrandLogo';
+import Button from '../../shared/Button';
+import Hidden from '@material-ui/core/Hidden';
 
 // custom-components
-import { NestedContainer } from "../../shared/NestedContainer";
-import { useStyles } from "./styles";
+import { NestedContainer } from '../../shared/NestedContainer';
+import { useStyles } from './styles';
 
 export const NAVBAR_HEIGHT = 120;
 
@@ -25,10 +25,7 @@ const NavBar = () => {
       >
         <BrandLogo />
         <Hidden mdUp>
-          <img
-            src={require("../../../assets/images/icon-hamburger.svg")}
-            alt=""
-          />
+          <img src={require('../../assets/images/icon-hamburger.svg')} alt="" />
         </Hidden>
         <Hidden smDown>
           <ul className={classes.navigationList}>
