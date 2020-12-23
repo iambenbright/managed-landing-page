@@ -9,26 +9,48 @@ export const useStyles = makeStyles(theme => ({
     height: AVATAR_WIDTH,
     top: `-${AVATAR_WIDTH / 2}px`,
   },
+  name: {
+    fontWeight: 700,
+    marginBottom: 20,
+  },
+  comment: {
+    color: theme.palette.grey[600],
+    [theme.breakpoints.only('sm')]: {
+      width: '70%',
+    },
+  },
+  outerContainer: {
+    overflow: 'hidden',
+    marginTop: 50,
+    [theme.breakpoints.up('md')]: {
+      maxHeight: 260,
+    },
+  },
+  innerContainer: {
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+      overflowX: 'scroll',
+    },
+  },
   testimonial: {
-    marginTop: '80px',
+    height: 300,
+    marginTop: 36,
     backgroundColor: grey['100'],
     padding: '0 30px 40px 30px',
-    borderRadius: '5px',
+    borderRadius: 5,
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    minWidth: 400,
     '&:not(:last-of-type)': {
       marginRight: 20,
     },
-  },
-  testimonials: {
-    display: 'flex',
-    overflowX: 'hidden',
+    [theme.breakpoints.up('sm')]: {
+      height: 230,
+    },
     [theme.breakpoints.up('md')]: {
-      overflowX: 'auto',
-      scrollBar: 'none',
+      height: 'auto',
+      minWidth: 500,
     },
   },
 }));

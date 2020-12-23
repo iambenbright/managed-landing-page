@@ -3,7 +3,7 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 
 export const useStyles = makeStyles(theme => ({
   getStarted: {
-    marginTop: '50px',
+    marginTop: 50,
     textAlign: 'center',
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.common.white,
@@ -32,15 +32,24 @@ export const useStyles = makeStyles(theme => ({
   subscribeTextBox: {
     backgroundColor: theme.palette.common.white,
     color: theme.palette.primary.main,
-    marginRight: '10px',
+    marginRight: 10,
     paddingTop: theme.spacing(0.6),
     paddingBottom: theme.spacing(0.6),
     borderRadius: 20,
     '&:hover': {
       backgroundColor: theme.palette.common.white,
     },
-    [theme.breakpoints.only('sm')]: {
+    [theme.breakpoints.down('sm')]: {
       flex: 1,
+    },
+  },
+  iconSize: {
+    width: 30,
+    height: 30,
+    [theme.breakpoints.up('sm')]: {
+      width: 20,
+      height: 20,
+      marginRight: 10,
     },
   },
   copyright: {

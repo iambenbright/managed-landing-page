@@ -2,11 +2,9 @@ import React, { Fragment } from 'react';
 
 // materialui-components
 import Box from '@material-ui/core/Box';
-// import Container from '@material-ui/core/Container';
 import { useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Input from '@material-ui/core/Input';
-// import blueGrey from '@material-ui/core/colors/blueGrey';
 
 // custome-components
 import Button from '../../shared/Button';
@@ -31,7 +29,7 @@ const Footer = () => {
             justifyContent={{ sm: 'space-between' }}
           >
             <Typography
-              variant="h3"
+              variant="h4"
               style={{ fontWeight: 'bold' }}
               className={classes.getStartedActionText}
             >
@@ -99,7 +97,7 @@ const Footer = () => {
             {/* social links */}
             <Box
               display="flex"
-              justifyContent="space-between"
+              justifyContent={{ xs: 'space-around', md: 'space-between' }}
               m="20px 20px 0"
               order={{ sm: 1 }}
             >

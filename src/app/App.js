@@ -12,6 +12,7 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: deepOrange['500'],
+      dark: deepOrange['300'],
     },
   },
   overrides: {
