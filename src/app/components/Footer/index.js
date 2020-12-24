@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 
 // materialui-components
 import Box from '@material-ui/core/Box';
@@ -16,6 +16,7 @@ import { NestedContainer } from '../../shared/NestedContainer';
 import { useStyles } from './styles';
 
 const Footer = () => {
+  const [inputFocused, setInputFocused] = useState(false);
   const theme = useTheme();
   const classes = useStyles();
 
@@ -28,11 +29,7 @@ const Footer = () => {
             alignItems={{ sm: 'center' }}
             justifyContent={{ sm: 'space-between' }}
           >
-            <Typography
-              variant="h4"
-              style={{ fontWeight: 'bold' }}
-              className={classes.getStartedActionText}
-            >
+            <Typography variant="h4" className={classes.getStartedActionText}>
               Simplify how your teams works today.
             </Typography>
             <Button
@@ -56,11 +53,25 @@ const Footer = () => {
           justifyContent="center"
           width={{ md: '25%' }}
         >
-          <Button className={classes.subscribeTextBox}>
+          <Button
+            className={classes.subscribeTextBox}
+            style={{
+              boxShadow: inputFocused
+                ? `0 0 0 2px ${theme.palette.primary.main}`
+                : null,
+            }}
+          >
             <Input
-              style={{ width: '100%' }}
-              placeholder="updates in your inbox..."
+              style={{
+                width: '100%',
+                color: inputFocused ? theme.palette.primary.main : null,
+              }}
+              placeholder={inputFocused ? '' : 'updates in your inbox...'}
               disableUnderline
+              onFocus={() => setInputFocused(true)}
+              onBlur={() => setInputFocused(false)}
+              type="email"
+              required
             />
           </Button>
           <Button style={{ marginTop: 0 }}>GO</Button>
@@ -68,14 +79,8 @@ const Footer = () => {
         {/* end of input box*/}
         <Box display={{ sm: 'flex' }} justifyContent={{ sm: 'space-between' }}>
           {/* site map */}
-          <Box
-            flex={{ sm: 1 }}
-            display="flex"
-            justifyContent={{ xs: 'space-between', sm: 'flex-end' }}
-            m={{ xs: '40px 40px 0', md: 0 }}
-            order={{ sm: 1 }}
-          >
-            <Box mr={{ sm: '100px', md: '150px', lg: '200px' }}>
+          <Box className={classes.siteMap}>
+            <Box className={classes.siteMapLeft}>
               <Link to="home" label="Home" />
               <Link to="pricing" label="Pricing" />
               <Link to="products" label="Products" />
