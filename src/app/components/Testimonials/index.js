@@ -31,7 +31,9 @@ const Testimonial = ({ data }) => {
         className={classes.avatar}
       />
       <Typography className={classes.name}>{name}</Typography>
-      <Typography className={classes.comment}>{comment}</Typography>
+      <Typography variant="body1" className={classes.comment}>
+        {comment}
+      </Typography>
     </Box>
   );
 };

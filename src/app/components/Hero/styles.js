@@ -17,6 +17,9 @@ export const useStyles = makeStyles(theme => ({
       minHeight: 600,
       backgroundPosition: 'top -160px right -200px',
     },
+    [theme.breakpoints.up('lg')]: {
+      backgroundPosition: 'top -160px right -140px',
+    },
   },
   heroContent: {
     width: '100%',

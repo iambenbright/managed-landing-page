@@ -25,8 +25,8 @@ const Services = () => {
           textAlign={{ xs: 'center', md: 'left' }}
           pr={{ xs: '16px', md: '80px' }}
         >
-          <Typography variant="h4" style={{ fontWeight: 700 }}>
-            What's different <br /> about Manage?
+          <Typography variant="h4" className={classes.serviceHeader}>
+            What's different about Manage?
           </Typography>
           <Typography className={classes.aboutUs}>
             Manage provides all the functionality your team needs, without the
@@ -43,12 +43,14 @@ const Services = () => {
                 className={classes.serviceTitleContainer}
               >
                 <Grid className={classes.serviceChip}>
-                  <Grid item className={classes.serviceNumber}>
-                    <Typography>{id}</Typography>
+                  <Grid item className={classes.serviceNumberContainer}>
+                    <Typography className={classes.serviceNumber}>
+                      {id}
+                    </Typography>
                   </Grid>
                 </Grid>
                 <Grid item style={{ marginLeft: 20 }}>
-                  <Typography style={{ fontWeight: 'bold' }}>
+                  <Typography className={classes.serviceTitle}>
                     {title}
                   </Typography>
                 </Grid>
@@ -60,7 +62,7 @@ const Services = () => {
           ))}
         </Box>
       </NestedContainer>
-      <Hidden mdDown>
+      <Hidden smDown>
         <Box position="absolute" top="960px" left="-300px">
           <img
             src={require('../../assets/images/bg-tablet-pattern.svg')}

@@ -11,10 +11,10 @@ export const useStyles = makeStyles(theme => ({
   },
   name: {
     fontWeight: 700,
+    color: theme.palette.grey['800'],
     marginBottom: 20,
   },
   comment: {
-    color: theme.palette.grey[600],
     [theme.breakpoints.only('sm')]: {
       width: '70%',
     },

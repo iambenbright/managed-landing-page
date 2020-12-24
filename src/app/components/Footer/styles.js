@@ -10,7 +10,7 @@ export const useStyles = makeStyles(theme => ({
     padding: '100px 10px',
   },
   getStartedActionText: {
-    fontWeight: 'bold',
+    color: theme.palette.common.white,
     [theme.breakpoints.only('xs')]: {
       marginBottom: 32,
     },
@@ -43,6 +43,27 @@ export const useStyles = makeStyles(theme => ({
       flex: 1,
     },
   },
+  siteMap: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    margin: '40px 40px 0',
+    [theme.breakpoints.up('md')]: {
+      margin: 0,
+    },
+    [theme.breakpoints.up('sm')]: {
+      flex: 1,
+      justifyContent: 'flex-end',
+      order: 1,
+    },
+  },
+  siteMapLeft: {
+    [theme.breakpoints.up('sm')]: {
+      marginRight: 100,
+    },
+    [theme.breakpoints.up('lg')]: {
+      marginRight: 200,
+    },
+  },
   iconSize: {
     width: 30,
     height: 30,
@@ -56,7 +77,7 @@ export const useStyles = makeStyles(theme => ({
     color: theme.palette.common.white,
     marginTop: 50,
     textAlign: 'center',
-    fontSize: '0.8rem',
+    // fontSize: '0.8rem',
     [theme.breakpoints.up('md')]: {
       position: 'absolute',
       top: 120,

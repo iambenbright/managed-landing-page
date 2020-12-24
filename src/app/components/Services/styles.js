@@ -16,6 +16,13 @@ export const useStyles = makeStyles(theme => ({
       flexDirection: 'row',
     },
   },
+  serviceHeader: {
+    [theme.breakpoints.only('sm')]: {
+      width: '40%',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
+  },
   serviceBgImage: {
     width: '100%',
     height: 'auto',
@@ -37,6 +44,10 @@ export const useStyles = makeStyles(theme => ({
       marginTop: 40,
     },
   },
+  serviceTitle: {
+    color: theme.palette.grey['800'],
+    fontWeight: 700,
+  },
   serviceTitleContainer: {
     backgroundColor: deepOrange['50'],
     [theme.breakpoints.down('sm')]: {
@@ -51,7 +62,7 @@ export const useStyles = makeStyles(theme => ({
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
   },
-  serviceNumber: {
+  serviceNumberContainer: {
     width: 60,
     height: 35,
     borderRadius: 20,
@@ -60,6 +71,9 @@ export const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  serviceNumber: {
+    color: theme.palette.common.white,
   },
   serviceContent: {
     color: theme.palette.grey[600],
