@@ -27,7 +27,7 @@ const Hero = () => {
             Bring everyone together to build better products.
           </Typography>
           <Typography className={classes.subTitle}>
-            Manage makes if simple for software teams <br /> to plan day-to-day
+            Manage makes it simple for software teams <br /> to plan day-to-day
             tasks while keeping the <br /> larger team goals in view
           </Typography>
           <Button>Get Started</Button>
