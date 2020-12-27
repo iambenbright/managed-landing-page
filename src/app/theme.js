@@ -41,6 +41,27 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiCssBaseline: {
+      '@global': {
+        body: {
+          scrollbarWidth: 'thin',
+          scrollbarColor: `${deepOrange['200']} ${defaultTheme.palette.background.default}`,
+          '&::-webkit-scrollbar': {
+            width: 12,
+          },
+          '&::-webkit-scrollbar-button': {
+            display: 'none',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: defaultTheme.palette.background.default,
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: deepOrange['200'],
+            borderRadius: 5,
+          },
+        },
+      },
+    },
   },
 });
 
