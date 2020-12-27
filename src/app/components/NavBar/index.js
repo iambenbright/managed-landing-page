@@ -6,16 +6,15 @@ import BrandLogo from '../../shared/BrandLogo';
 import Button from '../../shared/Button';
 import Hidden from '@material-ui/core/Hidden';
 import Box from '@material-ui/core/Box';
-import { Typography, useTheme } from '@material-ui/core';
 
 // custom-components
 import { NestedContainer } from '../../shared/NestedContainer';
+import NavList from './List';
 
 // styles
 import { useStyles } from './styles';
 
 export const NAVBAR_HEIGHT = 120;
-const navs = ['Pricing', 'Product', 'About Us', 'Careers', 'Community'];
 
 const HamburgerAndClose = ({ setMenuOpen, fileURL, altName }) => {
   const classes = useStyles();
@@ -27,41 +26,6 @@ const HamburgerAndClose = ({ setMenuOpen, fileURL, altName }) => {
       src={fileURL}
       alt={altName}
     />
-  );
-};
-
-const NavList = () => {
-  const [isFocused, setIsFocused] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(null);
-  const classes = useStyles();
-  const theme = useTheme();
-
-  return (
-    <nav className={classes.nav}>
-      <ul className={classes.list}>
-        {navs.map((nav, idx) => (
-          <li key={idx} className={classes.item}>
-            <a href={`#${nav}`}>
-              <Typography
-                onMouseOver={() => {
-                  setIsFocused(true);
-                  setActiveIndex(idx);
-                }}
-                onMouseLeave={() => setIsFocused(false)}
-                style={{
-                  color:
-                    isFocused && activeIndex === idx
-                      ? theme.palette.grey[600]
-                      : null,
-                }}
-              >
-                {nav}
-              </Typography>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
   );
 };
 
